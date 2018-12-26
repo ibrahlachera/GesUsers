@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ user.fullname }}{% endblock %}
+
+{% block body %}
+<h1>Information sur cet utilisateur: </h1>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="card">
+  <div class="card-header">
+    {{ user.fullname }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Adresse: {{ user.adresse }}</h5>
+    <p class="card-text">Numéro de Telephone: {{ user.tel }}</p>
+    <a href="/" class="btn btn-primary">Go Back to the previous page</a>
+  </div>
+</div>
+ 
+{% endblock %}

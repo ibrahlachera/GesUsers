@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users{% endblock %}
+
+{% block body %}
+<h1>Liste des utilisateurs: </h1>
+<br/>
+<br/>
+<br/>
+<br/>
+  {% if users %}
+    <table id="users" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Full-Name</th>
+          <th>Adresse</th>
+          <th>Telephone</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+          <tr>
+            <td>{{ user.fullname }}</td>
+            <td>{{ user.adresse }}</td>
+            <td>{{ user.tel }}</td>
+            <td>
+              <a href="/users/{{ user.id }}" class="btn btn-dark">Show</a>
+              <a href="/user/edit/{{ user.id }}" class="btn btn-light">Edit</a>
+              <a href="#" class="btn btn-danger delete-user" data-id="{{user.id }}">Delete</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No users to display</p>
+  {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+  <script src="/js/main.js"></script>
+{% endblock %}

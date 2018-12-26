@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New User{% endblock %}
+
+{% block body %}
+<h1>Ajouter un utilisateur: </h1>
+<a href="/">Back to the list</a>
+<br/>
+<br/>
+<br/>
+<br/>
+ {{ form_start(form) }}
+ {{ form_widget(form) }}
+ {{ form_end(form) }}
+{% endblock %}
